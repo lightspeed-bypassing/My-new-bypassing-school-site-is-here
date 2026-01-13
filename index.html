@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>GN-Movies Premium</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="data:;base64,iVBORw0KGgo=">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <base target="_blank">
+</head>
+<body>
+    <!-- NETFLIX-STYLE INTRO -->
+    <div class="intro-overlay" id="introOverlay">
+        <div class="intro-logo">
+            <span class="letter">G</span>
+            <span class="letter">N</span>
+        </div>
+        <audio id="introSound" preload="auto">
+            <source src="https://www.soundjay.com/misc/sounds/bell-ringing-05.wav" type="audio/wav">
+        </audio>
+    </div>
+
+    <header>
+        <div class="header-content">
+            <div class="brand-logo">
+                <div class="gn-icon">GN</div>
+                <h1>GN-MOVIES V1.5</h1>
+            </div>
+            <div class="search-container">
+                <input id="searchBar" type="text" placeholder="🔍 Search movies, shows, or genres...">
+            </div>
+            <div class="header-buttons">
+                <button class="action-btn" id="requestMovieBtn">
+                    <i class="fas fa-plus-circle"></i> Request
+                </button>
+                <button class="action-btn" id="partnersBtn">
+                    <i class="fas fa-handshake"></i> Partners
+                </button>
+                <button class="action-btn" id="myListBtn">
+                    <i class="fas fa-heart"></i> My List
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Partners Popup -->
+    <div id="partnersPopup">
+        <button class="close-popup" onclick="closePartnersPopup()">&times;</button>
+        <h2>Our Partners</h2>
+        <p>Check out our partner site:</p>
+        <a href="https://sites.google.com/view/cine-hub-revived" id="cineHubLink" target="_blank">
+            <i class="fas fa-external-link-alt"></i> Cine-Hub
+        </a>
+    </div>
+
+    <!-- My List Popup -->
+    <div id="myListPopup">
+        <button class="close-popup" onclick="closeMyListPopup()">&times;</button>
+        <h2>My List</h2>
+        <div id="myListContent">
+            <p>No movies in your list yet. Click the ❤️ button on any movie to add it!</p>
+        </div>
+    </div>
+
+    <!-- Video Player Overlay -->
+    <div id="videoPlayerOverlay">
+        <div class="player-header">
+            <button id="backButton"><i class="fas fa-arrow-left"></i> Back to Movies</button>
+            <span id="playerTitle" style="margin-left:20px;font-weight:600"></span>
+            <div id="connectionBar" title="Connection Strength">
+                <div id="connectionFill"></div>
+            </div>
+        </div>
+        <iframe id="playerIframe" allowfullscreen></iframe>
+    </div>
+
+    <div class="container">
+        <div id="noResults" class="no-results hidden">
+            <i class="fas fa-search fa-3x"></i><br>
+            No movies found matching your search.
+        </div>
+
+        <!-- New & Featured -->
+        <section class="category-section">
+            <h2 class="category-header">New & Featured 🔥</h2>
+            <div class="movie-grid" id="featured-grid">
+                <!-- Movie cards will be populated by JavaScript -->
+            </div>
+        </section>
+
+        <!-- Horror -->
+        <section class="category-section">
+            <h2 class="category-header">Horror 🔪</h2>
+            <div class="movie-grid" id="horror-grid">
+                <!-- Movie cards will be populated by JavaScript -->
+            </div>
+        </section>
+
+        <!-- Marvel & DC -->
+        <section class="category-section">
+            <h2 class="category-header">Marvel & DC 🦸</h2>
+            <div class="movie-grid" id="marvel-grid">
+                <!-- Movie cards will be populated by JavaScript -->
+            </div>
+        </section>
+
+        <!-- Animation & Kids -->
+        <section class="category-section">
+            <h2 class="category-header">Animation & Kids 🎮</h2>
+            <div class="movie-grid" id="animation-grid">
+                <!-- Movie cards will be populated by JavaScript -->
+            </div>
+        </section>
+
+        <!-- Action & Crime -->
+        <section class="category-section">
+            <h2 class="category-header">Action & Crime 💣</h2>
+            <div class="movie-grid" id="action-grid">
+                <!-- Movie cards will be populated by JavaScript -->
+            </div>
+        </section>
+
+        <!-- TV Shows -->
+        <section class="category-section">
+            <h2 class="category-header">TV Shows 📺</h2>
+            <div class="movie-grid" id="tv-grid">
+                <!-- Movie cards will be populated by JavaScript -->
+            </div>
+        </section>
+
+        <!-- Anime & Shows -->
+        <section class="category-section">
+            <h2 class="category-header">Anime & Shows🎮</h2>
+            <div class="movie-grid" id="anime-grid">
+                <!-- Movie cards will be populated by JavaScript -->
+            </div>
+        </section>
+
+        <!-- PAGE 2 BUTTON CONTAINER -->
+        <div class="page2-container">
+            <a href="https://2635374.playcode.io/" id="page2Btn" target="_blank">
+                <i class="fas fa-arrow-right"></i> Page 2
+            </a>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 GN-Math Hub. All rights reserved. | <i class="fas fa-heart"></i> Built with passion</p>
+    </footer>
+
+    <!-- scroll-to-top helper -->
+    <button id="scrollTopBtn" title="Go to top"><i class="fas fa-arrow-up"></i></button>
+
+    <script src="script.js"></script>
+</body>
+</html>
